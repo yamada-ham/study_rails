@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_08_134302) do
     t.string "name"
     t.text "text"
     t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
