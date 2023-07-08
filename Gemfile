@@ -71,6 +71,8 @@ group :test do
   gem "webdrivers"
 end
 
+
+# -- 自分で導入したパッケージ --
 # PostgreSQL
 gem 'pg'
 

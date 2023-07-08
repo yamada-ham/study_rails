@@ -1,24 +1,18 @@
-# README
+## ローカル環境構築
+```
+# クローン
+git clone URL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# パッケージ
+bundle install
 
-Things you may want to cover:
+# 設定ファイル
+cp .env.example .env 
 
-* Ruby version
+# DB用意
+rails db:create
+rails db:migrate
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# サーバー起動
+rails server -b 0.0.0.0
+```
