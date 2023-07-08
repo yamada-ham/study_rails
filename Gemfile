@@ -75,4 +75,4 @@ end
 gem 'pg'
 
 # .env
-gem 'dotenv'
+gem 'dotenv-rails'
