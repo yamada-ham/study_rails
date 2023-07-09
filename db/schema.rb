@@ -15,10 +15,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_08_134302) do
   enable_extension "plpgsql"
 
   create_table "memos", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "name"
     t.text "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["user_id"], name: "index_memos_on_user_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "age"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_foreign_key "memos", "users"
 end

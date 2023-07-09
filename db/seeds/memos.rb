@@ -1,1 +1,1 @@
-Memo.create(name: "Railsの基礎知識2", text: "text2")
+Memo.create(user_id: 1 , name: "Railsの基礎知識2", text: "text2")
