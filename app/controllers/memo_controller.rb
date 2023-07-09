@@ -1,11 +1,10 @@
 class MemoController < ApplicationController
   def index
-    @memos = Memo.all
-)
+    # @memos = Memo.all
+    @memos = Memo.includes(:user).where('id > ?', 0)
     debug = Lib::Debug.new
     debug.print_r(@memos)
 
-    @memo = "memo_data";
     render action: "index"
   end
 
