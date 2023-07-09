@@ -36,3 +36,4 @@
 
 # 設定ファイル
 .env
+node_modules
