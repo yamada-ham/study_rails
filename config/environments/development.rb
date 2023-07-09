@@ -67,4 +67,14 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # ログローテーションの設定
+  # 通常のログファイルの設定
+  config.logger = ActiveSupport::Logger.new("log/#{Rails.env}_#{Date.today.to_s}.log", 'daily')
+  config.logger.formatter = proc { |severity, timestamp, _, message| "#{severity} [#{timestamp.strftime('%Y-%m-%d %H:%M:%S')}] #{message}\n" }
+
+  # エラーレベルのみのログファイルを作成する設定
+  config.error_logger = ActiveSupport::Logger.new("log/error_#{Rails.env}_#{Date.today.to_s}.log", 'daily')
+  config.error_logger.level = :error
+  config.error_logger.formatter = config.logger.formatter
 end

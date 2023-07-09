@@ -1,4 +1,3 @@
-
 module Lib
   # Debug
   class Debug
