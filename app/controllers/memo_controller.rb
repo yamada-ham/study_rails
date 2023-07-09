@@ -1,8 +1,22 @@
 class MemoController < ApplicationController
   def index
     @memos = Memo.all
-    Rails.logger.info(@memos)
+)
+    debug = Lib::Debug.new
+    debug.print_r(@memos)
+
     @memo = "memo_data";
+    render action: "index"
+  end
+
+  def show
+    @memo = Memo.find_by(id: 1)
+    
+    user = @memo.user
+
+    Rails.logger.debug("\nデバッグ")
+    Rails.logger.debug(user.inspect)
+    Rails.logger.debug("\n")
     render action: "index"
   end
 
