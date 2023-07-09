@@ -1,5 +1,4 @@
-module Lib
-  # Debug
+module DebugHelper
   class Debug
     # オブジェクトや配列を改行してログ出力
     # @param data [Object]
@@ -11,3 +10,4 @@ module Lib
     end
   end
 end
+  
