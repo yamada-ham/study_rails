@@ -14,13 +14,14 @@
   "html.format.enable": false,
   "html.format.wrapAttributes": "preserve",
   "prettier.tabWidth": 2,
-  "[scss]": {
-    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
-  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "search.exclude": {
     "node_modules": true
+  },
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.html.erb": "html"
   }
 }

@@ -1,16 +1,15 @@
 class MemoController < ApplicationController
   def index
     # @memos = Memo.all
-    @memos = Memo.includes(:user).where('id > ?', 0)
+    @memos = Memo.includes(:user).where("id > ?", 0)
     debug = Lib::Debug.new
     debug.print_r(@memos)
-
     render action: "index"
   end
 
   def show
     @memo = Memo.find_by(id: 1)
-    
+
     user = @memo.user
 
     Rails.logger.debug("\nデバッグ")
@@ -45,7 +44,7 @@ class MemoController < ApplicationController
     memo = Memo.find_by(id: 1)
 
     # レコードを削除
-    memo.destroy()
+    memo.destroy
 
     render action: "index"
   end

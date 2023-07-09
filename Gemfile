@@ -78,3 +78,9 @@ gem 'pg'
 
 # .env
 gem 'dotenv-rails'
+
+# フォーマット
+gem 'rufo'
+
+# 解析
+gem 'rubocop'
