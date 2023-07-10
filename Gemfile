@@ -84,3 +84,5 @@ gem 'rufo'
 
 # 解析
 gem 'rubocop'
+
+gem 'sidekiq'

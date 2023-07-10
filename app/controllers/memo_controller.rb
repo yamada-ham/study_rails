@@ -1,6 +1,6 @@
 class MemoController < ApplicationController
   def index
-    TestJob.perform_later guest
+    TestJob.perform_later
     # @memos = Memo.all
     @memos = Memo.includes(:user).where("id > ?", 0)
     debug_helper = DebugHelper::Debug.new

@@ -18,5 +18,8 @@ module StudyRails
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # ジョブのアダプターにsidekiqを利用
+    config.active_job.queue_adapter = :sidekiq
   end
 end
