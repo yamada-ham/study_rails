@@ -3,5 +3,5 @@ class Memo < ApplicationRecord
 
   validates :user, presence: true
   validates :name, presence: true, length: { maximum: 255 }
-  validates :text, presence: true
+  validates :text, presence: true, on: :create
 end
