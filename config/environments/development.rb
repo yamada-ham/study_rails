@@ -77,4 +77,15 @@ Rails.application.configure do
   config.error_logger = ActiveSupport::Logger.new("log/error_#{Rails.env}_#{Date.today.to_s}.log", 'daily')
   config.error_logger.level = :error
   config.error_logger.formatter = config.logger.formatter
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '3961bd56b9471f',
+    :password => '10b6f22c74bd0b',
+    :address => 'sandbox.smtp.mailtrap.io',
+    :host => 'sandbox.smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
 end

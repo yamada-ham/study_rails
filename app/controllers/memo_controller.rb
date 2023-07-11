@@ -11,6 +11,8 @@ class MemoController < ApplicationController
   def show
     param_value = params[:re_hello]
     @memo = Memo.find_by(id: 1)
+    memo = Memo.find_by(id: 1)
+    MemoMailer.send_mail(memo).deliver_now
 
     user = @memo.user
 
