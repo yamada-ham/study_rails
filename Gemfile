@@ -86,3 +86,5 @@ gem 'rufo'
 gem 'rubocop'
 
 gem 'sidekiq'
+
+gem "whenever"
