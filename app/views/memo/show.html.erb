@@ -1,0 +1,7 @@
+HELLOだよ <% if @memos.present? && @memos.any? %> <% @memos.each do |memo| %>
+<ul>
+  <li><%= memo.name %></li>
+  <li><%= memo.text %></li>
+  <li><%= memo.user.name %></li>
+</ul>
+<% end %> <% end %>

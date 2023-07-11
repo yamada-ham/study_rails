@@ -9,14 +9,16 @@ class MemoController < ApplicationController
   end
 
   def show
+    param_value = params[:re_hello]
     @memo = Memo.find_by(id: 1)
 
     user = @memo.user
 
-    Rails.logger.debug("\nデバッグ")
+    Rails.logger.debug("\nデバッグ show")
+    Rails.logger.debug(param_value)
     Rails.logger.debug(user.inspect)
     Rails.logger.debug("\n")
-    render action: "index"
+    render action: "show"
   end
 
   def create
@@ -28,6 +30,7 @@ class MemoController < ApplicationController
   end
 
   def edit
+    param_value = params[:hello]
     # レコードを取得
     memo = Memo.find_by(id: 1)
 
@@ -37,7 +40,19 @@ class MemoController < ApplicationController
 
     # 保存
     memo.save
-    render action: "index"
+    render action: "edit"
+  end
+
+  def update
+    param_value = params[:hello]
+
+    Rails.logger.debug("\nデバッグ update")
+    Rails.logger.debug(param_value)
+    Rails.logger.debug("\n")
+
+    # render action: "update"
+    # redirect_to memo_show_path
+    redirect_to memo_show_path(re_hello: param_value)
   end
 
   def destroy
