@@ -23,9 +23,18 @@ class MemoController < ApplicationController
 
   def create
     memo = Memo.new
+    memo.user_id = 1
     memo.name = "Sample Memo"
-    memo.text = "This is a sample memo."
-    memo.save
+    # memo.text = "This is a sample memo."
+    if memo.save
+      Rails.logger.debug("成功");
+    else
+      memo.errors.full_messages.each do |message|
+        puts message
+        Rails.logger.debug("失敗");
+        Rails.logger.debug(message)
+      end
+    end
     render action: "index"
   end
 

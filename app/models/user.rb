@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    has_many :memo
+  has_many :memo
 end
