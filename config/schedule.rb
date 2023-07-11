@@ -22,6 +22,7 @@ every 1.minute do
     command "date >> /var/www/html/study_rails/log/hello.log"
     rake "job:test"
     runner "Rails.logger.debug('rake test!!!')"
+    command "cd /var/www/html/study_rails && /usr/local/bin/bundle exec rake task_sample:hello"
 end
   
   
